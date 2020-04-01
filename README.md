@@ -1,4 +1,6 @@
 # free5GC IPTV
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffree5gc%2FIPTV.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffree5gc%2FIPTV?ref=badge_shield)
+
 
 This is an simple IPTV Server that you can self host on Linux / Windows base on [FFmpeg](https://www.ffmpeg.org/) and [Go](https://golang.org/).
 
@@ -107,10 +109,12 @@ You can contact [free5gc.org@gmail.com](mailto:free5gc.org@gmail.com).
 
 We are using [Apache 2.0](./LICENSE.txt) for the project.
 
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffree5gc%2FIPTV.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffree5gc%2FIPTV?ref=badge_large)
+
 ## Release Note
 
 ### v2020-03-31-01
 
 + Implement unicast IPTV server
 + Verify IPTV application running on 5G core network
-

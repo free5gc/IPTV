@@ -72,7 +72,7 @@ This project is maintained by [free5GC](https://free5gc.org) for validation of I
     yarn build
     cd ..
     vim iptvcfg.conf # Configure iptv details
-    mkdir hls
+    mkdir hls        # Create chache folder, default is ./hls
     go run iptv.go
     ```
 

@@ -1,4 +1,4 @@
-package hls_channel
+package hlschannel
 
 import (
 	"fmt"
@@ -7,13 +7,16 @@ import (
 	"path/filepath"
 )
 
+// ChannelList : group of Channel structure
 type ChannelList []Channel
 
+// Channel : single channel structure
 type Channel struct {
 	Name      string
 	VideoPath string
 }
 
+// Compile : compile group of channel into m3u playlist index
 func (channelList *ChannelList) Compile(cacheFolder string) (err error) {
 	file, err := os.OpenFile(filepath.Join(cacheFolder, "index.m3u"), os.O_RDWR|os.O_CREATE, 0755)
 	if err != nil {
@@ -28,6 +31,7 @@ func (channelList *ChannelList) Compile(cacheFolder string) (err error) {
 	return
 }
 
+// Compile : for each single channel, encode to m3u8 playlist and ts frame and run streaming
 func (channel *Channel) Compile(cacheFolder string) (err error) {
 	// TODO: Use relative path now, maybe use absolute path in the future
 	videoStoreRootPath := fmt.Sprintf(cacheFolder+"/%s/", channel.Name)

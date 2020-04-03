@@ -4,6 +4,7 @@
 
 package factory
 
+// IptvChannel : detail of each channel
 type IptvChannel struct {
 	ChannelName string `yaml:"ChannelName"`
 

@@ -4,6 +4,7 @@
 
 package factory
 
+// IptvServer : Information of server, include iptv server and web client
 type IptvServer struct {
 	ServerAddr Ipv4Port `yaml:"ServerAddr"`
 

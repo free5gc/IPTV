@@ -39,6 +39,7 @@ linters:
     - ineffassign
     - deadcode
     - typecheck
+    - golint
   disable-all: false
   fast: false
 

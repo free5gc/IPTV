@@ -1,4 +1,4 @@
-package iptv_server
+package iptvserver
 
 import (
 	"fmt"
@@ -11,6 +11,7 @@ import (
 	"./hls-channel"
 )
 
+// Server : server information read from config file and pass into this process
 type Server struct {
 	IptvServerIpv4Port factory.Ipv4Port
 	Channels           []factory.IptvChannel
@@ -19,12 +20,13 @@ type Server struct {
 	Version            string
 }
 
+// Start : Start of IPTV Application Server
 func (s Server) Start() {
 	// Start M3U8 encoder
-	m3uChannelList := hls_channel.ChannelList{}
+	m3uChannelList := hlschannel.ChannelList{}
 	// IPTV Channel List Complie -> m3u
 	for _, channel := range s.Channels {
-		m3uChannelList = append(m3uChannelList, hls_channel.Channel{Name: channel.ChannelName, VideoPath: channel.VideoPath})
+		m3uChannelList = append(m3uChannelList, hlschannel.Channel{Name: channel.ChannelName, VideoPath: channel.VideoPath})
 	}
 	err := m3uChannelList.Compile(s.CacheFolder)
 	if err != nil {
@@ -34,7 +36,7 @@ func (s Server) Start() {
 
 	// IPTV Video Source compile -> m3u8
 	for _, channel := range m3uChannelList {
-		go func(channel hls_channel.Channel) {
+		go func(channel hlschannel.Channel) {
 			err := channel.Compile(s.CacheFolder)
 			if err != nil {
 				fmt.Printf("IPTV Channel create fail: %s %+v\n", channel.Name, err)

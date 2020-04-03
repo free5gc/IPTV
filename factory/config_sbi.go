@@ -4,6 +4,7 @@
 
 package factory
 
+// Sbi : sbi information
 type Sbi struct {
 	Scheme   string `yaml:"scheme"`
 	TLS      *TLS   `yaml:"tls"`

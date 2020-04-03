@@ -4,12 +4,13 @@
 
 package factory
 
+// AFConfig : detail information of AF
 type AFConfig struct {
 	AFName string `yaml:"AFName"`
 
 	Sbi Sbi `yaml:"Sbi"`
 
-	NrfUri string `yaml:"NrfUri"`
+	NrfURI string `yaml:"NrfUri"`
 
 	LADN string `yaml:"LADN"`
 

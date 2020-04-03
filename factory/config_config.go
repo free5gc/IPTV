@@ -4,6 +4,7 @@
 
 package factory
 
+// Config : All detail configuration of IPTV
 type Config struct {
 	Info Info `yaml:"info"`
 

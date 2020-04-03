@@ -11,6 +11,7 @@ import (
 )
 
 type (
+	// Config : IPTV Configuration file information
 	Config struct {
 		iptvcfg string
 	}
@@ -26,10 +27,10 @@ var iptvFlags = []cli.Flag{
 }
 
 func action(c *cli.Context) error {
-	if err := Initialize(c); err != nil {
+	if err := initialize(c); err != nil {
 		fmt.Print(err)
 	}
-	if err := Start(); err != nil {
+	if err := start(); err != nil {
 		fmt.Print(err)
 	}
 	return nil
@@ -47,7 +48,7 @@ func main() {
 	}
 }
 
-func Initialize(c *cli.Context) error {
+func initialize(c *cli.Context) error {
 	config = Config{
 		iptvcfg: c.String("iptvcfg"),
 	}
@@ -61,9 +62,9 @@ func Initialize(c *cli.Context) error {
 	return nil
 }
 
-func Start() error {
+func start() error {
 	// Run gin Server
-	server := iptv_server.Server{}
+	server := iptvserver.Server{}
 	server.IptvServerIpv4Port = factory.IptvConfig.Configuration.IPTVServer.ServerAddr
 	server.Channels = factory.IptvConfig.Configuration.IPTVServer.Channel
 	server.CacheFolder = factory.IptvConfig.Configuration.IPTVServer.CacheFolder

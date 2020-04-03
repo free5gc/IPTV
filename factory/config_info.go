@@ -4,6 +4,7 @@
 
 package factory
 
+// Info : Information of IPTV
 type Info struct {
 	Version string `yaml:"version"`
 

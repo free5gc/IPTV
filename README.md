@@ -1,4 +1,5 @@
 # free5GC IPTV
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/free5gc/IPTV)](https://github.com/free5gc/IPTV/releases)
 [![Go Report Card](https://goreportcard.com/badge/github.com/free5gc/IPTV)](https://goreportcard.com/report/github.com/free5gc/IPTV)
 [![License](https://img.shields.io/github/license/free5gc/IPTV)](./LICENSE.txt)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffree5gc%2FIPTV.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffree5gc%2FIPTV?ref=badge_shield)

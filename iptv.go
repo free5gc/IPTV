@@ -18,9 +18,9 @@ type (
 
 var config Config
 
-var iptvFlags = []cli.Flag {
-	&cli.StringFlag {
-		Name: "iptvcfg",
+var iptvFlags = []cli.Flag{
+	&cli.StringFlag{
+		Name:  "iptvcfg",
 		Usage: "config file",
 	},
 }
@@ -48,7 +48,7 @@ func main() {
 }
 
 func Initialize(c *cli.Context) error {
-	config = Config {
+	config = Config{
 		iptvcfg: c.String("iptvcfg"),
 	}
 

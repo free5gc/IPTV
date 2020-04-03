@@ -1,5 +1,10 @@
 # free5GC IPTV
+[![Go Report Card](https://goreportcard.com/badge/github.com/free5gc/IPTV)](https://goreportcard.com/report/github.com/free5gc/IPTV)
+[![License](https://img.shields.io/github/license/free5gc/IPTV)](./LICENSE.txt)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffree5gc%2FIPTV.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffree5gc%2FIPTV?ref=badge_shield)
+[![Release Download](https://img.shields.io/github/downloads/free5gc/IPTV/total)](https://github.com/free5gc/IPTV/releases)
+![Reop Size](https://img.shields.io/github/repo-size/free5gc/IPTV)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
 
 This is an simple IPTV Server that you can self host on Linux / Windows base on [FFmpeg](https://www.ffmpeg.org/) and [Go](https://golang.org/).
@@ -17,7 +22,7 @@ This project is maintained by [free5GC](https://free5gc.org) for validation of I
     ```
 
 - node.js
-  
+
     ```shell
     sudo apt-get install nodejs
     ```
@@ -100,7 +105,7 @@ And the playlist's location will be: `IPv4:Port/iptv/index.m3u`
 4. On iOS
      - [GSE SMART IPTV](https://apps.apple.com/us/app/gse-smart-iptv/id1028734023)
      - [Movie Stream: Cast & Streaming](https://apps.apple.com/us/app/movie-stream-ip-tv-films/id1450912244)
-  
+
 ## Contact Information
 
 You can contact [free5gc.org@gmail.com](mailto:free5gc.org@gmail.com).

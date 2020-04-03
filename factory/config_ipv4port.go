@@ -9,4 +9,3 @@ type Ipv4Port struct {
 
 	Port int `yaml:"Port"`
 }
-

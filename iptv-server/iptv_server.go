@@ -2,9 +2,9 @@ package iptv_server
 
 import (
 	"fmt"
-	"net/http"
-	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/static"
+	"github.com/gin-gonic/gin"
+	"net/http"
 	"strconv"
 
 	"../factory"
@@ -13,18 +13,18 @@ import (
 
 type Server struct {
 	IptvServerIpv4Port factory.Ipv4Port
-	Channels []factory.IptvChannel
-	CacheFolder string
-	WebClient string
-	Version string
-};
+	Channels           []factory.IptvChannel
+	CacheFolder        string
+	WebClient          string
+	Version            string
+}
 
-func (s Server)Start() {
+func (s Server) Start() {
 	// Start M3U8 encoder
 	m3uChannelList := hls_channel.ChannelList{}
 	// IPTV Channel List Complie -> m3u
 	for _, channel := range s.Channels {
-		m3uChannelList = append(m3uChannelList, hls_channel.Channel{ Name: channel.ChannelName, VideoPath: channel.VideoPath } )
+		m3uChannelList = append(m3uChannelList, hls_channel.Channel{Name: channel.ChannelName, VideoPath: channel.VideoPath})
 	}
 	err := m3uChannelList.Compile(s.CacheFolder)
 	if err != nil {
@@ -54,7 +54,9 @@ func (s Server)Start() {
 	// Run M3U8 Server
 	router.Use(static.Serve("/iptv", static.LocalFile(s.CacheFolder, false)))
 	router.GET("/version", func(c *gin.Context) {
-		c.String(http.StatusOK, s.Version )
+		c.String(http.StatusOK, s.Version)
 	})
-	router.Run(s.IptvServerIpv4Port.IPv4Addr + ":" + strconv.Itoa(s.IptvServerIpv4Port.Port))
+	if err := router.Run(s.IptvServerIpv4Port.IPv4Addr + ":" + strconv.Itoa(s.IptvServerIpv4Port.Port)); err != nil {
+		fmt.Println(err)
+	}
 }

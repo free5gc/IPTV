@@ -15,7 +15,7 @@ var IptvConfig Config
 
 func checkErr(err error) {
 	if err != nil {
-		err = fmt.Errorf("[Configuration] %s", err.Error())
+		fmt.Printf("[Configuration] %s", err.Error())
 	}
 }
 
@@ -29,7 +29,5 @@ func InitConfigFactory(f string) {
 	err = yaml.Unmarshal([]byte(content), &IptvConfig)
 	checkErr(err)
 
-	fmt.Println("Successfully initialize configuration %s", f)
+	fmt.Printf("Successfully initialize configuration %s\n", f)
 }
-
-

@@ -31,15 +31,15 @@ linters:
     - gofmt
     - govet
     - errcheck
-    #- staticcheck
-    #- unused
+    - staticcheck
+    - unused
     - gosimple
-    #- structcheck
+    - structcheck
     - varcheck
     - ineffassign
     - deadcode
-    #- typecheck
-  disable-all: true
+    - typecheck
+  disable-all: false
   fast: false
 
 

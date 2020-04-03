@@ -13,4 +13,3 @@ type IptvServer struct {
 
 	WebClientFolder string `yaml:"WebClientFolder"`
 }
-

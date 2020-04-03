@@ -21,6 +21,7 @@
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-player": "^1.15.3",
+    "react-script": "^2.0.5",
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2"
   },
